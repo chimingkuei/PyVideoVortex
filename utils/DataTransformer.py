@@ -20,13 +20,18 @@ class DataTransformer:
             exit()
 
     def GetVideoInfo(self, video):
-        fps = int(video.get(cv2.CAP_PROP_FPS))
-        width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
-        height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
         dict = {
         'fps': int(video.get(cv2.CAP_PROP_FPS)), 
         'width': int(video.get(cv2.CAP_PROP_FRAME_WIDTH)),
         'height': int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
         }
         return dict
+    
+    def IndicatorLight(self, image, position, color):
+        if color =="Red":
+            cv2.circle(image, (position[0], position[1]), 30, (0, 0, 255), -1)
+            cv2.circle(image, (position[0], position[1]), 33, (128, 128, 128), 5)
+        elif color =="Green":
+            cv2.circle(image, (position[0], position[1]), 30, (0, 255, 0), -1)
+            cv2.circle(image, (position[0], position[1]), 33, (128, 128, 128), 5)
     
