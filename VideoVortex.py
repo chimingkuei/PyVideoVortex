@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
-from utils import DataTransformer, ImageHandler
+from utils.DataTransformer import DataTransformer
+from utils.DataTransformer import VideoTransformer
+from utils.ImageHandler import ImageHandler
+
 
 
 class VideoVortex:
@@ -12,9 +15,9 @@ class VideoVortex:
 
     def DetectVideo(self):
         video_capture = cv2.VideoCapture(self.input_video)
-        DT = DataTransformer.DataTransformer()
-        VT = DataTransformer.VideoTransformer(video_capture)
-        IH = ImageHandler.ImageHandler()
+        DT = DataTransformer()
+        VT = VideoTransformer(video_capture)
+        IH = ImageHandler()
         VT.VideoIsOpened()
         ROI_video = VT.WriteVideo(self.output_video, VT.GetVideoInfo()['fps'], VT.GetROIVideoSize(self.points))
         while True:
