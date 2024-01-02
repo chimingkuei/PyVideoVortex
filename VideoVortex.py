@@ -58,4 +58,3 @@ if __name__ == '__main__':
     #points = [(416, 426), (529, 539), (913, 311), (791, 224)] #2.mp4
     Object = VideoVortex(input_video, output_video, points, adjust_video_size)
     Object.DetectVideo()
-    #test
