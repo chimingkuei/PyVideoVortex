@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
-from utils.DataTransformer import DataTransformer
-from utils.DataTransformer import VideoTransformer
+from utils.DataTransformer import DataTransformer, VideoTransformer
 from utils.ImageHandler import ImageHandler
 
 
